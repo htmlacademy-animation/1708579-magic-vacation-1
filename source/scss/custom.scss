@@ -1,78 +1,46 @@
-.page-header__menu a {
+.page-header__menu {
+  opacity: 0;
+  transition: opacity 0.1s ease-out 0.39s;
 
-  &::after {
-
-    display: block;
-    width: 0%;
-    transition: width 0.3s ease;
-    background-color: $c-light;
-    right: 0;
-    left: auto;
-
-  }
-
-  &:hover::after {
-    width: 100%;
-    background-color: $c-purple;
-    right: auto;
-    left: 0;
-  }
-
-  &.active {
-    color: $c-light;
+  a {
 
     &::after {
+      display: block;
+      width: 0%;
+      transition: width 0.3s ease;
       background-color: $c-light;
-      width: 100%;
+      right: 0;
+      left: auto;
     }
 
     &:hover::after {
-      background-color: $c-light;
       width: 100%;
-    }
-  }
-
-}
-
-.social-block__toggler {
-  &::before {
-    transition: 0.3s ease;
-  }
-
-  &:hover {
-    color: $c-dark;
-
-    &::before {
-      border-width: 4px;
-      background-color: $c-light;
-
-    }
-  }
-
-}
-
-.social-block--active {
-  .social-block__toggler {
-    color: $c-light;
-
-    &::before {
       background-color: $c-purple;
-      border-width: 2px;
-      border-color: $c-purple;
+      right: auto;
+      left: 0;
     }
+  }
+}
 
-    &:hover {
-      color: $c-purple;
+.page-header__menu {
+  a {
+    &.active {
+      color: $c-light;
 
-      &::before {
-        border-width: 4px;
-        background-color: $c-light;
-        border-color: $c-light;
+      &::after {
+        background-color: transparent;
+        width: 0%;
+        transition: 0.14s cubic-bezier(.22, .63, .4, 1.01) 0.48s;
+        right: 0;
+        left: auto;
+      }
+
+      &:hover::after {
+        background-color: transparent;
+        width: 0%;
       }
     }
-
   }
-
 }
 
 .social-block__list {
@@ -144,14 +112,11 @@
 
       }
     }
-
   }
 
   .intro__message {
-
     opacity: 0;
     transition: 0.4s ease-in 0.5s;
-
   }
 
   .form__field {
@@ -165,7 +130,6 @@
     .intro__message {
       transform: translateY(-20px);
       opacity: 0;
-
     }
 
   }
@@ -174,7 +138,6 @@
     .intro__message {
       transform: translateY(-20px);
       opacity: 1;
-
     }
 
     .form__field {
@@ -182,6 +145,119 @@
       padding: 0 5.6rem;
       transition: 0.25s ease-out;
     }
+  }
+}
+
+.screen__footer {
+  transform: translateY(100%);
+  transition: transform 0.45s cubic-bezier(.22, .63, .4, 1.01);
+}
+
+.page-header__logo {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.1s cubic-bezier(.22, .63, .4, 1.01) 0.3s, transform 0.2s cubic-bezier(.22, .63, .4, 1.01) 0.4s;
+}
+
+.page-header__social {
+  opacity: 0;
+  transition: opacity 0.22s cubic-bezier(.22, .63, .4, 1.01) 0.48s;
+}
+
+.social-block__toggler {
+  color: $c-purple;
+  transform: scale(1.2);
+  transition: opacity 0.2s cubic-bezier(.22, .63, .4, 1.01) 0.48s, transform 0.12s cubic-bezier(.22, .63, .4, 1.01) 0.58s;
+
+  &::before {
+    background-color: transparent;
+    border-color: transparent;
+    transition: 0.18s cubic-bezier(.22, .63, .4, 1.01) 0.48s;
+  }
+
+}
+
+
+
+.loaded {
+
+  .page-header__logo,
+  .page-header__nav {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .screen__footer {
+    transform: translateY(0);
+  }
+
+  .page-header__menu,
+  .page-header__social {
+    opacity: 1;
+  }
+
+  .social-block__toggler {
+    color: $c-dark;
+    transform: scale(1);
+
+    &::before {
+      background-color: $c-light;
+      border-color: $c-light;
+      transition: 0.3s ease;
+    }
+
+    &:hover {
+      color: $c-dark;
+
+      &::before {
+        border-width: 4px;
+        background-color: $c-light;
+
+      }
+    }
 
   }
+
+  .social-block--active {
+    .social-block__toggler {
+      color: $c-light;
+
+      &::before {
+        background-color: $c-purple;
+        border-width: 2px;
+        border-color: $c-purple;
+      }
+
+      &:hover {
+        color: $c-purple;
+
+        &::before {
+          border-width: 4px;
+          background-color: $c-light;
+          border-color: $c-light;
+        }
+      }
+    }
+  }
+
+  .page-header__menu {
+    a {
+      &.active {
+        color: $c-light;
+
+        &::after {
+          background-color: $c-light;
+          width: 100%;
+          left: 0;
+          right: auto;
+        }
+
+        &:hover::after {
+          background-color: $c-light;
+          width: 100%;
+        }
+      }
+    }
+  }
+
 }
