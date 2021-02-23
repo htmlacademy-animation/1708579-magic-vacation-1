@@ -3458,9 +3458,8 @@ img {
   width: 100%;
   display: block;
   height: 0%;
-  opacity: 0;
   background-color: #5f458c;
-  transition: 0.1s ease;
+  transition: 0.6s ease;
   z-index: -1; }
 
 .before-prizes {
@@ -3468,8 +3467,7 @@ img {
   position: relative; }
   .before-prizes .story_to_prize {
     height: 100%;
-    z-index: 100;
-    opacity: 1; }
+    z-index: 100; }
 
 
 /*# sourceMappingURL=style.min.css.map*/
