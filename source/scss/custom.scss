@@ -261,3 +261,24 @@
   }
 
 }
+.story_to_prize {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: block;
+  height: 0%;
+  background-color: $c-dark;
+  transition: 0.6s ease;
+  z-index: -1;
+}
+
+.before-prizes {
+  z-index: 1;
+  position: relative;
+  .story_to_prize {
+    height: 100%;
+    z-index: 100;
+  }
+}
