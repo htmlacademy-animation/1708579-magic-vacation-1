@@ -40,12 +40,30 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
+    let before_prizes = false;
     this.screenElements.forEach((screen) => {
-      screen.classList.add(`screen--hidden`);
-      screen.classList.remove(`active`);
+      if( screen.classList.contains('screen--story') && screen.classList.contains('active') && this.screenElements[this.activeScreen].classList.contains('screen--prizes') ){
+        before_prizes = true;
+        screen.classList.add(`before-prizes`);
+        setTimeout(() => {
+          screen.classList.add(`screen--hidden`);
+          screen.classList.remove(`active`);
+          screen.classList.remove(`before-prizes`);
+        }, 600);
+      } else {
+        screen.classList.add(`screen--hidden`);
+        screen.classList.remove(`active`);
+      }
     });
-    this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
-    setTimeout(() => this.screenElements[this.activeScreen].classList.add(`active`), 100);
+    if ( before_prizes ){
+      setTimeout(() => {
+        this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+        this.screenElements[this.activeScreen].classList.add(`active`);
+      } , 589);
+    }else {
+      this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+      setTimeout(() => this.screenElements[this.activeScreen].classList.add(`active`), 100);
+    }
   }
 
   changeActiveMenuItem() {
