@@ -261,6 +261,7 @@
   }
 
 }
+
 .story_to_prize {
   position: absolute;
   bottom: 0;
@@ -277,8 +278,111 @@
 .before-prizes {
   z-index: 1;
   position: relative;
+
   .story_to_prize {
     height: 100%;
     z-index: 100;
+  }
+}
+
+@keyframes befores_move {
+
+  from {
+    height: 0;
+    width: 0;
+    color: $c-purple;
+    font-size: 0rem;
+    line-height: 0rem;
+
+  }
+
+
+}
+
+.rules__item {
+  will-change: transform;
+}
+
+.rules__item::before {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  animation-name: befores_move;
+  animation-duration: 0.35s;
+  animation-timing-function: cubic-bezier(.34, 1.84, .82, .93);
+  animation-fill-mode: backwards;
+
+}
+
+
+.rules__item p {
+  animation-name: li_move;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+
+}
+
+@for $i from 1 through 6 {
+
+  .rules__item:nth-child(#{$i})::before {
+    animation-delay: (0.25s * $i);
+  }
+
+  .rules__item:nth-child(#{$i}) p {
+    animation-delay: (0.35s * $i);
+  }
+
+}
+
+.rules__link {
+  animation-name: rules__link_move, li_text_change-color;
+  animation-duration: 0.3s, 0.1s;
+  animation-delay: 1.7s, 2s;
+  animation-timing-function: ease, ease;
+  animation-fill-mode: backwards, backwards;
+}
+
+@keyframes rules__link_move {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+
+  1% {
+    opacity: 1;
+
+  }
+
+  to {
+
+    width: 150px;
+  }
+
+}
+
+@keyframes li_text_change-color {
+  from {
+    color: transparent;
+  }
+
+  to {
+    color: $c-purple;
+  }
+}
+
+@keyframes li_move {
+  from {
+    transform: translateX(35px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
