@@ -386,3 +386,330 @@
     opacity: 1;
   }
 }
+
+.spaces {
+  display: inline-block;
+  margin: 0 1rem 0 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+
+  &.spaces_visible {
+    opacity: 1;
+  }
+}
+
+.letter {
+  display: inline-block;
+  transform: translate3d(0, 1em, 0);
+
+  &.animate {
+    animation-name: title_show;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  vertical-align: sub;
+}
+
+@keyframes title_show {
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+
+.result__image img {
+  display: block;
+  position: absolute;
+  object-fit: contain;
+  height: auto;
+}
+
+
+.screen--result.screen--show .result__image {
+  .flamingo_img {
+    width: 220px;
+    max-width: 100%;
+    right: 48%;
+    bottom: 0;
+    transform-origin: bottom;
+    animation-name: flamingo_show, flamingo_bounce;
+    animation-delay: 1.1s, 1.61s;
+    opacity: 0;
+    animation-duration: 0.5s, 3s;
+    animation-fill-mode: forwards, forwards;
+    animation-timing-function: ease-out, linear;
+  
+  }
+  .suitcase_img {
+
+    width: 350px;
+    max-width: 100%;
+    right: 40%;
+    bottom: 0;
+    animation-name: suitcase_show;
+    animation-delay: 1.1s;
+    animation-duration: 0.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    z-index: -1;
+  
+  }
+  .leaf2_img {
+    top: 43%;
+    left: 27%;
+    transform: rotate(45deg);
+    transform-origin: right;
+    animation-name: leaf2_show;
+    animation-delay: 1.67s;
+    animation-duration: 3s;
+  }
+  .leaf_img,
+  .leaf1_img {
+  right: 29%;
+  animation-name: leaf1_show;
+  animation-duration: 3s;
+  transform-origin: left;
+}
+.leaf2_img,
+.leaf_img,
+.leaf1_img {
+  width: 300px;
+  height: 300px;
+  z-index: -1;
+  opacity: 0;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.5, -0.3, .6, .9);
+}
+.leaf1_img {
+  top: 39%;
+  animation-delay: 1.67s;
+}
+.leaf_img {
+  top: 49%;
+  animation-delay: 1.7s;
+}
+
+}
+
+
+
+@keyframes flamingo_show {
+  from {
+    opacity: 0.1;
+    transform: translate3d(0, 0, 0) rotate(-39deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(-5px, -105px, 0) rotate(5deg);
+
+
+  }
+}
+
+@keyframes suitcase_show {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(0.1, 0.1, 0.1);
+
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, -120px, 0) scale3d(1, 1, 1);
+
+  }
+}
+
+@keyframes leaf1_show {
+
+  0% {
+
+    transform: rotate(0deg);
+
+  }
+
+  14% {
+
+    transform: rotate(16deg);
+
+  }
+
+  28% {
+    opacity: 1;
+    transform: rotate(4deg);
+
+  }
+
+  42% {
+
+    transform: rotate(13deg);
+
+  }
+
+  56% {
+    transform: rotate(7deg);
+  }
+
+  70% {
+
+    transform: rotate(11deg);
+
+  }
+
+  85% {
+
+    transform: rotate(8deg);
+
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(9deg);
+
+  }
+
+}
+
+@keyframes leaf2_show {
+
+  0% {
+    transform: rotate(43deg);
+
+  }
+
+  14% {
+
+    transform: rotate(-45deg);
+
+  }
+
+  28% {
+    opacity: 1;
+    transform: rotate(20deg);
+
+  }
+
+  42% {
+
+    transform: rotate(-28deg);
+
+  }
+
+  56% {
+
+    transform: rotate(8deg);
+  }
+
+  70% {
+
+    transform: rotate(-19deg);
+
+  }
+
+  85% {
+
+    transform: rotate(0deg);
+
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(-8deg);
+
+  }
+
+}
+
+@keyframes flamingo_bounce {
+  0% {
+
+    transform: translate3d(-5px, -105px, 0) rotate(5deg);
+  }
+
+  30% {
+    transform: translate3d(4px, -130px, 0) rotate(-4deg);
+  }
+
+
+  60% {
+    transform: translate3d(-2px, -115px, 0) rotate(2deg);
+  }
+
+  90% {
+    transform: translate3d(1px, -122px, 0) rotate(-1deg);
+  }
+
+  100% {
+    transform: translate3d(0, -120px, 0) rotate(0deg);
+  }
+
+}
+
+.screen--result.screen--show .form__field {
+  padding: 0 5.6rem;
+  animation-name: prises-screen-result-input;
+  animation-duration: 0.53s;
+  animation-delay: 3.1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.screen--result.screen--show .form__button {
+  animation-duration: 0.35s;
+  animation-delay: 2.8s;
+  animation-name: prises-screen-result-btn;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  opacity: 0;
+
+}
+
+@keyframes prises-screen-result-input {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+
+  1% {
+    opacity: 1;
+
+  }
+
+  to {
+    opacity: 1;
+    width: 81%;
+  }
+
+}
+
+@keyframes prises-screen-result-btn {
+  25% {
+    opacity: 0;
+    color: transparent;
+  }
+
+  50% {
+    opacity: 1;
+    color: transparent;
+
+  }
+
+  75% {
+    opacity: 1;
+    color: $c-dark;
+  }
+
+  100% {
+    opacity: 1;
+    color: $c-dark;
+  }
+}
