@@ -1,4 +1,5 @@
 import throttle from 'lodash/throttle';
+import TextAnimate from './text_animate.js';
 
 export default class FullPageScroll {
   constructor() {
@@ -40,6 +41,13 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
+    const animate = new TextAnimate();
+    animate.animateText(document.querySelector(".intro__title"), 5, 150, 400);
+    animate.animateText(document.querySelector(".intro__date"), 5, 0, 1400);
+    animate.animateText(document.querySelector(".slider__item-title"), 5, 0, 200);
+    animate.animateText(document.querySelector(".prizes__title"), 5, 0, 400);
+    animate.animateText(document.querySelector(".rules__title"), 5, 0, 110);
+    animate.animateText(document.querySelector(".game__title"), 5, 0, 110);
     let before_prizes = false;
     this.screenElements.forEach((screen) => {
       if( screen.classList.contains('screen--story') && screen.classList.contains('active') && this.screenElements[this.activeScreen].classList.contains('screen--prizes') ){
