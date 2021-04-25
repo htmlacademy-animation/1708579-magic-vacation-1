@@ -3326,68 +3326,116 @@ img {
     background-color: transparent;
     width: 0%; }
 
-.slide1 div.page-header__menu a.active {
+.screen--story.slide1 div.page-header__menu a.active {
   color: #ffffff; }
-  .slide1 div.page-header__menu a.active:hover {
+  .screen--story.slide1 div.page-header__menu a.active:hover {
     color: #ffffff; }
 
-.slide1 div.page-header__menu a:hover, .slide1 div.page-header__menu a:after {
+.screen--story.slide1 div.page-header__menu a:hover, .screen--story.slide1 div.page-header__menu a:after {
   color: #5f458c; }
 
-.slide1 div.page-header__menu a:hover::after {
+.screen--story.slide1 div.page-header__menu a:hover::after {
   background-color: #5f458c; }
 
-.slide1 .slider__control {
+.screen--story.slide1 .slider__control {
   color: #5f458c; }
-  .slide1 .slider__control:hover {
+  .screen--story.slide1 .slider__control:hover {
     color: #a67ee5; }
 
-.slide2 div.page-header__menu a.active {
+.screen--story.slide1 .social-block__toggler {
+  color: #a67ee5; }
+  .screen--story.slide1 .social-block__toggler:hover {
+    color: #5f458c; }
+
+.screen--story.slide1 .social-block--active .social-block__toggler {
   color: #ffffff; }
-  .slide2 div.page-header__menu a.active:hover {
+  .screen--story.slide1 .social-block--active .social-block__toggler::before {
+    background-color: #5f458c;
+    border-color: #5f458c; }
+  .screen--story.slide1 .social-block--active .social-block__toggler:hover {
+    color: #5f458c; }
+
+.screen--story.slide1 .social-block--active .social-block__link:hover {
+  color: #5f458c; }
+
+.screen--story.slide2 div.page-header__menu a.active {
+  color: #ffffff; }
+  .screen--story.slide2 div.page-header__menu a.active:hover {
     color: #ffffff; }
 
-.slide2 div.page-header__menu a:hover, .slide2 div.page-header__menu a:after {
+.screen--story.slide2 div.page-header__menu a:hover, .screen--story.slide2 div.page-header__menu a:after {
   color: lightblue; }
 
-.slide2 div.page-header__menu a:hover::after {
+.screen--story.slide2 div.page-header__menu a:hover::after {
   background-color: lightblue; }
 
-.slide2 .slider__control {
+.screen--story.slide2 .slider__control {
   color: lightblue; }
-  .slide2 .slider__control:hover {
-    color: #406a97; }
+  .screen--story.slide2 .slider__control:hover {
+    color: #202893; }
 
-.slide3 div.page-header__menu a.active {
+.screen--story.slide2 .social-block__toggler {
+  color: lightblue; }
+  .screen--story.slide2 .social-block__toggler:hover {
+    color: #202893; }
+
+.screen--story.slide2 .social-block--active .social-block__toggler {
   color: #ffffff; }
-  .slide3 div.page-header__menu a.active:hover {
-    color: #ffffff; }
-
-.slide3 div.page-header__menu a:hover, .slide3 div.page-header__menu a:after {
-  color: #406a97; }
-
-.slide3 div.page-header__menu a:hover::after {
-  background-color: #406a97; }
-
-.slide3 .slider__control {
-  color: #406a97; }
-  .slide3 .slider__control:hover {
+  .screen--story.slide2 .social-block--active .social-block__toggler::before {
+    background-color: lightblue;
+    border-color: lightblue; }
+  .screen--story.slide2 .social-block--active .social-block__toggler:hover {
     color: lightblue; }
 
-.slide4 div.page-header__menu a.active {
+.screen--story.slide2 .social-block--active .social-block__link:hover {
+  color: lightblue; }
+
+.screen--story.slide3 div.page-header__menu a.active {
   color: #ffffff; }
-  .slide4 div.page-header__menu a.active:hover {
+  .screen--story.slide3 div.page-header__menu a.active:hover {
     color: #ffffff; }
 
-.slide4 div.page-header__menu a:hover, .slide4 div.page-header__menu a:after {
+.screen--story.slide3 div.page-header__menu a:hover, .screen--story.slide3 div.page-header__menu a:after {
+  color: #202893; }
+
+.screen--story.slide3 div.page-header__menu a:hover::after {
+  background-color: #202893; }
+
+.screen--story.slide3 .slider__control {
+  color: lightblue; }
+  .screen--story.slide3 .slider__control:hover {
+    color: #202893; }
+
+.screen--story.slide3 .social-block__toggler {
+  color: #202893; }
+  .screen--story.slide3 .social-block__toggler:hover {
+    color: lightblue; }
+
+.screen--story.slide3 .social-block--active .social-block__toggler {
+  color: #ffffff; }
+  .screen--story.slide3 .social-block--active .social-block__toggler::before {
+    background-color: #202893;
+    border-color: #202893; }
+  .screen--story.slide3 .social-block--active .social-block__toggler:hover {
+    color: #202893; }
+
+.screen--story.slide3 .social-block--active .social-block__link:hover {
+  color: #202893; }
+
+.screen--story.slide4 div.page-header__menu a.active {
+  color: #ffffff; }
+  .screen--story.slide4 div.page-header__menu a.active:hover {
+    color: #ffffff; }
+
+.screen--story.slide4 div.page-header__menu a:hover, .screen--story.slide4 div.page-header__menu a:after {
   color: #a67ee5; }
 
-.slide4 div.page-header__menu a:hover::after {
+.screen--story.slide4 div.page-header__menu a:hover::after {
   background-color: #a67ee5; }
 
-.slide4 .slider__control {
+.screen--story.slide4 .slider__control {
   color: #5f458c; }
-  .slide4 .slider__control:hover {
+  .screen--story.slide4 .slider__control:hover {
     color: #a67ee5; }
 
 .social-block__list {
@@ -3832,7 +3880,8 @@ img {
     opacity: 1;
     color: #5f458c; } }
 
-.slider__control:active::before, .slider__control:active:focus::before {
+.slider__control:active::before,
+.slider__control:active:focus::before {
   background-color: #ffffff;
   border-color: #ffffff;
   border-color: #fff; }
@@ -3844,60 +3893,38 @@ img {
 .slider__control:hover::before {
   border: 2px solid #fff; }
 
-.screen--story.active .slider__control.slider__control--prev {
+.screen--story .slider__control.slider__control--prev {
   opacity: 0;
-  animation-name: slider-prev-move;
-  animation-fill-mode: forwards;
-  animation-duration: 1s;
-  animation-delay: 1.6s;
-  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); }
+  transform: translate3d(-60px, 0, 0) rotate(0deg);
+  transition: 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s; }
+
+.screen--story.active .slider__control.slider__control--prev {
+  opacity: initial;
+  transform: translate3d(0px, 0, 0) rotate(360deg); }
+
+.screen--story .slider__control.slider__control--next {
+  opacity: 0;
+  transform: translate3d(60px, 0, 0) rotate(0deg); }
 
 .screen--story.active .slider__control.slider__control--next {
-  opacity: 0;
-  animation-name: slider-next-move;
-  animation-fill-mode: forwards;
-  animation-duration: 1s;
-  animation-delay: 1.6s;
-  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); }
-
-@keyframes slider-prev-move {
-  from {
-    opacity: 1;
-    transform: translate3d(-60px, 0, 0) rotate(0deg); }
-  to {
-    opacity: initial;
-    transform: translate3d(0px, 0, 0) rotate(360deg); } }
-
-@keyframes slider-next-move {
-  from {
-    opacity: initial;
-    transform: translate3d(60px, 0, 0) rotate(0deg); }
-  to {
-    opacity: initial;
-    transform: translate3d(0px, 0, 0) rotate(-360deg); } }
+  opacity: initial;
+  transform: translate3d(0px, 0, 0) rotate(-360deg);
+  transition: 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s; }
 
 .game__buttons {
   display: block !important; }
 
-.result--negative .result__button span {
+.screen--result .result--negative .result__button {
   opacity: 0;
-  animation-name: slider-next-move;
-  animation-fill-mode: forwards;
-  animation-duration: 0.4s;
-  animation-delay: 1.6s;
-  animation-timing-function: ease-out; }
+  transition: 0.3s linear 0.1s; }
+  .screen--result .result--negative .result__button span {
+    transform: translate3d(40px, 0, 0) rotate(0deg);
+    transition: 0.4s ease-out 0.1s; }
 
-.result--negative .result__button {
-  opacity: 0;
-  animation-name: appear;
-  animation-fill-mode: forwards;
-  animation-duration: 0.4s;
-  animation-delay: 1.4s;
-  animation-timing-function: ease-out; }
-
-@keyframes appear {
-  to {
-    opacity: 1; } }
+.screen--result.screen--show .result--negative .result__button {
+  opacity: 1; }
+  .screen--result.screen--show .result--negative .result__button span {
+    transform: translate3d(0px, 0, 0) rotate(-360deg); }
 
 .disclaimer ul,
 .screen__footer-note {

@@ -10370,7 +10370,11 @@ class FullPageScroll {
     });
     let hidden_timeout = 0;
     let active_timeout = 100;
-
+      if ( this.screenElements[this.activeScreen].classList.contains('screen--story') ) {
+        document.querySelector("body").classList.add('screen--story')
+      } else {
+        document.querySelector("body").classList.remove('screen--story')
+      }
       if (before_prizes) {
         setTimeout(() => {
           this.screenElements[this.activeScreen].classList.add(`before-active`);
@@ -10510,7 +10514,7 @@ __webpack_require__.r(__webpack_exports__);
         let targetEl = [].slice.call(results).filter(function (el) {
           return el.getAttribute(`id`) === target;
         });
-        targetEl[0].classList.add(`screen--show`);
+        setTimeout(() => targetEl[0].classList.add(`screen--show`), 100);
         targetEl[0].classList.remove(`screen--hidden`);
       });
     }
