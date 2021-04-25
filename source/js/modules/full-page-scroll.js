@@ -92,7 +92,11 @@ export default class FullPageScroll {
     });
     let hidden_timeout = 0;
     let active_timeout = 100;
-
+      if ( this.screenElements[this.activeScreen].classList.contains('screen--story') ) {
+        document.querySelector("body").classList.add('screen--story')
+      } else {
+        document.querySelector("body").classList.remove('screen--story')
+      }
       if (before_prizes) {
         setTimeout(() => {
           this.screenElements[this.activeScreen].classList.add(`before-active`);

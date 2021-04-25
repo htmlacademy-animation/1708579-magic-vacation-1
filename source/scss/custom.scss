@@ -46,106 +46,222 @@
     }
   }
 }
-.slide1{
-  div.page-header__menu a {
-    &.active {
-      color: $c-light;
-      &:hover{
+
+.screen--story {
+  &.slide1 {
+    div.page-header__menu a {
+      &.active {
         color: $c-light;
+
+        &:hover {
+          color: $c-light;
+        }
+      }
+
+      &:hover,
+      &:after {
+        color: $c-dark;
+      }
+
+      &:hover::after {
+        background-color: $c-dark;
       }
     }
-  
-    &:hover,
-    &:after {
+
+    .slider__control {
       color: $c-dark;
-    }
-    &:hover::after {
-      background-color: $c-dark;
-    }
-  }
-  .slider__control{
-    color:$c-dark;
-    &:hover{
-      color:  $c-purple;
-    }
-  }
-}
 
-
-
-.slide2{
-  div.page-header__menu a {
-    &.active {
-      color: $c-light;
-      &:hover{
-        color: $c-light;
+      &:hover {
+        color: $c-purple;
       }
     }
-    &:hover,
-    &:after {
-      color: lightblue;
-    }
-    &:hover::after {
-      background-color: lightblue;
-    }
-  }
-  .slider__control{
-    color:lightblue;
-    &:hover{
-      color:  #406a97;
-    }
-  }
-  
-}
-.slide3{
-  div.page-header__menu a {
-    &.active {
-      color: $c-light;
-      &:hover{
-        color: $c-light;
-      }
-    }
-    &:hover,
-    &:after {
-      color: #406a97;
-    }
-    &:hover::after {
-      background-color: #406a97;
-    }
-  }
-  .slider__control{
-    color:#406a97;
-    &:hover{
-      color:  lightblue;
-    }
-  }
-  
-}
-.slide4{
-  div.page-header__menu a {
-    &.active {
-      color: $c-light;
-      &:hover{
-        color: $c-light;
-      }
-    }
-    &:hover,
-    &:after {
+
+    .social-block__toggler {
       color: $c-purple;
-    }
-    &:hover::after {
-      background-color: $c-purple;
-    }
-  }
-  .slider__control{
-    color:$c-dark;
-    &:hover{
-      color:  $c-purple;
+
+      &:hover {
+        color: $c-dark;
+
+      }
 
     }
+
+    .social-block--active {
+      .social-block__toggler {
+        color: $c-light;
+
+        &::before {
+          background-color: $c-dark;
+          border-color: $c-dark;
+        }
+
+        &:hover {
+          color: $c-dark;
+
+        }
+      }
+
+      .social-block__link:hover {
+        color: $c-dark;
+      }
+    }
   }
 
+
+
+  &.slide2 {
+    div.page-header__menu a {
+      &.active {
+        color: $c-light;
+
+        &:hover {
+          color: $c-light;
+        }
+      }
+
+      &:hover,
+      &:after {
+        color: lightblue;
+      }
+
+      &:hover::after {
+        background-color: lightblue;
+      }
+    }
+
+    .slider__control {
+      color: lightblue;
+
+      &:hover {
+        color: #202893;
+      }
+    }
+
+    .social-block__toggler {
+      color: lightblue;
+
+      &:hover {
+        color: #202893;
+
+      }
+
+    }
+
+    .social-block--active {
+      .social-block__toggler {
+        color: $c-light;
+
+        &::before {
+          background-color: lightblue;
+          border-color: lightblue;
+        }
+
+        &:hover {
+          color: lightblue;
+        }
+      }
+
+      .social-block__link:hover {
+        color: lightblue;
+      }
+    }
+
+
+  }
+
+
+
+  &.slide3 {
+    div.page-header__menu a {
+      &.active {
+        color: $c-light;
+
+        &:hover {
+          color: $c-light;
+        }
+      }
+
+      &:hover,
+      &:after {
+        color: #202893;
+      }
+
+      &:hover::after {
+        background-color: #202893;
+      }
+    }
+
+    .slider__control {
+      color: lightblue;
+
+      &:hover {
+        color: #202893;
+      }
+    }
+
+    .social-block__toggler {
+      color: #202893;
+
+      &:hover {
+        color: lightblue;
+
+      }
+
+    }
+
+    .social-block--active {
+      .social-block__toggler {
+        color: $c-light;
+
+        &::before {
+          background-color: #202893;
+          border-color: #202893;
+        }
+
+        &:hover {
+          color: #202893;
+        }
+      }
+
+      .social-block__link:hover {
+        color: #202893;
+      }
+    }
+
+
+  }
+
+  &.slide4 {
+    div.page-header__menu a {
+      &.active {
+        color: $c-light;
+
+        &:hover {
+          color: $c-light;
+        }
+      }
+
+      &:hover,
+      &:after {
+        color: $c-purple;
+      }
+
+      &:hover::after {
+        background-color: $c-purple;
+      }
+    }
+
+    .slider__control {
+      color: $c-dark;
+
+      &:hover {
+        color: $c-purple;
+
+      }
+    }
+  }
 }
+
 .social-block__list {
   opacity: 1;
 
@@ -825,70 +941,53 @@
     color: $c-dark;
   }
 }
-.slider__control:active::before, .slider__control:active:focus::before {
+
+.slider__control:active::before,
+.slider__control:active:focus::before {
 
   background-color: $c-light;
   border-color: $c-light;
   border-color: #fff;
 }
-.slider__control{
-  &::before{
+
+.slider__control {
+  &::before {
     border: 0px solid #fff;
     transition: 0.1s ease-out;
   }
-  &:hover{
-    &::before{
+
+  &:hover {
+    &::before {
       border: 2px solid #fff;
     }
 
   }
 
 }
-.screen--story.active .slider__control.slider__control--prev {
-  opacity: 0;
-  animation-name: slider-prev-move;
-  animation-fill-mode: forwards;
-  animation-duration: 1s;
-  animation-delay: 1.6s;
-  // animation-timing-function:linear;
-  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
 
+.screen--story .slider__control.slider__control--prev {
+  opacity: 0;
+  transform: translate3d(-60px, 0, 0) rotate(0deg);
+  transition: 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s;
+}
+
+.screen--story.active .slider__control.slider__control--prev {
+  opacity: initial;
+  transform: translate3d(0px, 0, 0) rotate(360deg);
+
+}
+
+.screen--story .slider__control.slider__control--next {
+  opacity: 0;
+  transform: translate3d(60px, 0, 0) rotate(0deg);
 
 }
 
 .screen--story.active .slider__control.slider__control--next {
-  opacity: 0;
-  animation-name: slider-next-move;
-  animation-fill-mode: forwards;
-  animation-duration: 1s;
-  animation-delay: 1.6s;
-  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: initial;
+  transform: translate3d(0px, 0, 0) rotate(-360deg);
+  transition: 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s;
 
-}
-
-@keyframes slider-prev-move {
-  from {
-    opacity: 1;
-    transform: translate3d(-60px, 0, 0) rotate(0deg);
-  }
-
-  to {
-    opacity: initial;
-    transform: translate3d(0px, 0, 0) rotate(360deg);
-  }
-
-}
-
-@keyframes slider-next-move {
-  from {
-    opacity: initial;
-    transform: translate3d(60px, 0, 0) rotate(0deg);
-  }
-
-  to {
-    opacity: initial;
-    transform: translate3d(0px, 0, 0) rotate(-360deg);
-  }
 
 }
 
@@ -896,34 +995,25 @@
   display: block !important;
 }
 
-.result--negative .result__button span {
+.screen--result .result--negative .result__button {
   opacity: 0;
-  animation-name: slider-next-move;
-  animation-fill-mode: forwards;
-  animation-duration: 0.4s;
-  animation-delay: 1.6s;
-  animation-timing-function: ease-out;
+  transition: 0.3s linear 0.1s;
 
-}
-
-.result--negative .result__button {
-  opacity: 0;
-  animation-name: appear;
-  animation-fill-mode: forwards;
-  animation-duration: 0.4s;
-  animation-delay: 1.4s;
-  animation-timing-function: ease-out;
-
-}
-
-@keyframes appear {
-  to {
-    opacity: 1;
+  span {
+    transform: translate3d(40px, 0, 0) rotate(0deg);
+    transition: 0.4s ease-out 0.1s;
   }
 
 }
 
+.screen--result.screen--show .result--negative .result__button {
+  opacity: 1;
 
+  span {
+    transform: translate3d(0px, 0, 0) rotate(-360deg);
+
+  }
+}
 
 .disclaimer ul,
 .screen__footer-note {
@@ -954,11 +1044,6 @@
       transition: transform 0.1s cubic-bezier(.22, .63, .4, 1.01);
     }
   }
-
-  // &.screen--hidden .screen__disclaimer .disclaimer,
-  // &.screen--hidden .screen__footer .screen__footer-note{
-  //   opacity: 0;
-  // }
 
   &.before-game {
 
@@ -1000,29 +1085,30 @@
   }
 
 }
-@media( max-width: 768px ){
-.js-footer-toggler {
-  transition: 0.3s ease;
-}
 
-.screen__footer.js-footer {
-
-  transition: 0.4s;
-
-  .screen__footer-note,
-  .screen__footer-announce {
-    opacity: 0;
-    transition: 0.3s linear 0.4s;
+@media(max-width: 768px) {
+  .js-footer-toggler {
+    transition: 0.3s ease;
   }
 
-  &.screen__footer--full {
+  .screen__footer.js-footer {
+
+    transition: 0.4s;
 
     .screen__footer-note,
     .screen__footer-announce {
-      opacity: 1;
+      opacity: 0;
+      transition: 0.3s linear 0.4s;
     }
 
+    &.screen__footer--full {
+
+      .screen__footer-note,
+      .screen__footer-announce {
+        opacity: 1;
+      }
+
+    }
   }
-}
 
 }
