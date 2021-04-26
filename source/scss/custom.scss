@@ -83,6 +83,17 @@
         color: $c-dark;
 
       }
+      &:active,
+      &:active:focus {
+        color: $c-light;
+        
+      }
+      &:active::before,
+      &:active:focus::before {
+        border-color: $c-dark;
+        background-color: $c-dark;
+        
+      }
 
     }
 
@@ -98,6 +109,12 @@
         &:hover {
           color: $c-dark;
 
+        }
+        &:active::before,
+        &:active:focus::before {
+          border-color: $c-light;
+          background-color: $c-light;
+          
         }
       }
 
@@ -133,7 +150,7 @@
       color: lightblue;
 
       &:hover {
-        color: #202893;
+        color: lightblue;
       }
     }
 
@@ -141,8 +158,19 @@
       color: lightblue;
 
       &:hover {
-        color: #202893;
+        color: lightblue;
 
+      }
+      &:active,
+      &:active:focus {
+        color: $c-light;
+        
+      }
+      &:active::before,
+      &:active:focus::before {
+        border-color:lightblue;
+        background-color: lightblue;
+        
       }
 
     }
@@ -158,6 +186,12 @@
 
         &:hover {
           color: lightblue;
+        }
+        &:active::before,
+        &:active:focus::before {
+          border-color: $c-light;
+          background-color: $c-light;
+          
         }
       }
 
@@ -192,7 +226,7 @@
     }
 
     .slider__control {
-      color: lightblue;
+      color: #202893;
 
       &:hover {
         color: #202893;
@@ -203,8 +237,19 @@
       color: #202893;
 
       &:hover {
-        color: lightblue;
+        color: #202893;
 
+      }
+      &:active,
+      &:active:focus {
+        color: $c-light;
+        
+      }
+      &:active::before,
+      &:active:focus::before {
+        border-color: #202893;
+        background-color: #202893;
+        
       }
 
     }
@@ -220,6 +265,12 @@
 
         &:hover {
           color: #202893;
+        }
+        &:active::before,
+        &:active:focus::before {
+          border-color: $c-light;
+          background-color: $c-light;
+          
         }
       }
 
