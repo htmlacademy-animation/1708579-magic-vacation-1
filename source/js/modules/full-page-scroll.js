@@ -19,6 +19,15 @@ export default class FullPageScroll {
     }));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
 
+    const zeppelinAnimateElements = document.querySelectorAll('.flight svg animate.root_animate');
+    const zeppelinAnimateTransformElement = document.querySelector('.flight svg animateTransform');
+
+    window.addEventListener('startZeppellin', function () {
+      zeppelinAnimateElements.forEach(zeppelinAnimateElement => {
+        zeppelinAnimateElement.beginElement();
+      });
+    }, false);
+
     this.onUrlHashChanged();
   }
 
@@ -56,14 +65,15 @@ export default class FullPageScroll {
     let to_rules_from_rules = false;
     this.screenElements.forEach((screen) => {
       screen.classList.remove(`before-active`);
-      function isActive( screen_name ){
-        if( screen.classList.contains(screen_name) && screen.classList.contains('active') ){
+
+      function isActive(screen_name) {
+        if (screen.classList.contains(screen_name) && screen.classList.contains('active')) {
           return true;
-        } 
+        }
         return false;
       }
 
-      function updateClass(class_name, delay = 600){
+      function updateClass(class_name, delay = 600) {
         screen.classList.add(class_name);
         setTimeout(() => {
           screen.classList.add(`screen--hidden`);
@@ -72,16 +82,16 @@ export default class FullPageScroll {
         }, delay);
       }
 
-      if ( isActive('screen--story') && this.screenElements[this.activeScreen].classList.contains('screen--prizes')) {
+      if (isActive('screen--story') && this.screenElements[this.activeScreen].classList.contains('screen--prizes')) {
         before_prizes = true;
         updateClass(`before-prizes`);
-      } else if ( isActive('screen--game') && this.screenElements[this.activeScreen].classList.contains('screen--rules')) {
+      } else if (isActive('screen--game') && this.screenElements[this.activeScreen].classList.contains('screen--rules')) {
         before_rules = true;
         updateClass(`before-rules`);
-      } else if ( (isActive('screen--rules') && !this.screenElements[this.activeScreen].classList.contains('screen--prizes')) || (isActive('screen--prizes') && !this.screenElements[this.activeScreen].classList.contains('screen--rules'))) {
+      } else if ((isActive('screen--rules') && !this.screenElements[this.activeScreen].classList.contains('screen--prizes')) || (isActive('screen--prizes') && !this.screenElements[this.activeScreen].classList.contains('screen--rules'))) {
         before_game = true;
         updateClass(`before-game`);
-      } else if (( isActive('screen--prizes') && this.screenElements[this.activeScreen].classList.contains('screen--rules')) || ( isActive('screen--rules') && this.screenElements[this.activeScreen].classList.contains('screen--prizes')) ) {
+      } else if ((isActive('screen--prizes') && this.screenElements[this.activeScreen].classList.contains('screen--rules')) || (isActive('screen--rules') && this.screenElements[this.activeScreen].classList.contains('screen--prizes'))) {
         to_rules_from_rules = true;
         updateClass(`to-rules-and-back`, 300);
       } else {
@@ -92,31 +102,38 @@ export default class FullPageScroll {
     });
     let hidden_timeout = 0;
     let active_timeout = 100;
-      if ( this.screenElements[this.activeScreen].classList.contains('screen--story') ) {
-        document.querySelector("body").classList.add('screen--story')
-      } else {
-        document.querySelector("body").classList.remove('screen--story')
-      }
-      if (before_prizes) {
+    if (this.screenElements[this.activeScreen].classList.contains('screen--story')) {
+      document.querySelector("body").classList.add('screen--story')
+    } else if (this.screenElements[this.activeScreen].classList.contains('screen--prizes')) {
+      document.querySelector("body").classList.remove('screen--story')
+      
         setTimeout(() => {
-          this.screenElements[this.activeScreen].classList.add(`before-active`);
+          const event = new Event('startZeppellin');
+          window.dispatchEvent(event);
         }, 589);
-        hidden_timeout = 589;
-        active_timeout = 689;
-      }
-      if (before_game) {
-        hidden_timeout = 200;
-      }
-      if (to_rules_from_rules) {
-        this.screenElements[this.activeScreen].classList.add(`before-transparent`);
-        hidden_timeout = 300;
-        active_timeout = 300;
-      }
-      if (before_rules) {
+    } else {
+      document.querySelector("body").classList.remove('screen--story')
+    }
+    if (before_prizes) {
+      setTimeout(() => {
         this.screenElements[this.activeScreen].classList.add(`before-active`);
-      }
-      setTimeout(() => this.screenElements[this.activeScreen].classList.remove(`screen--hidden`), hidden_timeout);
-      setTimeout(() => this.screenElements[this.activeScreen].classList.add(`active`), active_timeout);
+      }, 589);
+      hidden_timeout = 589;
+      active_timeout = 689;
+    }
+    if (before_game) {
+      hidden_timeout = 200;
+    }
+    if (to_rules_from_rules) {
+      this.screenElements[this.activeScreen].classList.add(`before-transparent`);
+      hidden_timeout = 300;
+      active_timeout = 300;
+    }
+    if (before_rules) {
+      this.screenElements[this.activeScreen].classList.add(`before-active`);
+    }
+    setTimeout(() => this.screenElements[this.activeScreen].classList.remove(`screen--hidden`), hidden_timeout);
+    setTimeout(() => this.screenElements[this.activeScreen].classList.add(`active`), active_timeout);
   }
 
   changeActiveMenuItem() {
